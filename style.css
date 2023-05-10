@@ -1068,6 +1068,10 @@ body {
 ._lock {
   overflow: hidden; }
 
+._show {
+  visibility: visible;
+  opacity: 1; }
+
 ._hide {
   position: absolute;
   top: 0;
@@ -1087,10 +1091,6 @@ body {
   z-index: 4;
   background-color: #fff;
   opacity: 0.96; }
-
-._show {
-  visibility: visible;
-  opacity: 1; }
 
 
 /*# sourceMappingURL=style.css.map*/
