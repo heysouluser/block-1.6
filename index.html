@@ -8,22 +8,66 @@
     <title>Услуги и сервисы</title>
   <link href="style.css" rel="stylesheet"></head>
   <body>
-    <header class="header">
+    <div class="container">
+      <header class="header">
       <nav class="header__row">
         <div class="header__info">
           <button class="header__button"><img src="./img/icons/menu/burger.svg" class="header__image" alt="Бургер-меню"></button>
           <a class="header__link" href="#"><img src="./img/icons/menu/Group.png" class="header__image" alt="Лого"></a>
         </div>
         <ul class="header__actions">
-          <li class="header__item"><button class="header__button"><img src="./img/icons/menu/call.svg" class="header__image" alt="Позвонить"></button></li>
-          <li class="header__item"><button class="header__button"><img src="./img/icons/menu/chat.svg" class="header__image" alt="Чат"></button></li>
+          <li class="header__item"><button class="header__button header__button--call"><img src="./img/icons/menu/call.svg" class="header__image" alt="Позвонить"></button></li>
+          <li class="header__item"><button class="header__button header__button--feedback"><img src="./img/icons/menu/chat.svg" class="header__image" alt="Чат"></button></li>
           <li class="header__item"><button class="header__button"><img src="./img/icons/menu/profile.svg" class="header__image" alt="Профиль"></button>
           </li>
           <li class="header__item"><button class="header__button"><img src="./img/icons/menu/repair.svg" class="header__image" alt="Ремонт"></button></li>
           <li class="header__item"><button class="header__button"><img src="./img/icons/menu/checkstatus.svg" class="header__image" alt="Статус заказа"></button> </li></ul>
       </nav>
     </header>
-    <main class="main">
+    <aside class="aside-burger">
+      <div class="aside__container">
+        <div class="aside-burger__header">
+          <nav class="aside-burger__menu">
+            <button class="aside-burger__burger-btn"><img src="/img/icons/menu/burger-close.svg" class="aside-burger__image" alt="Бургер-меню"></button>
+              <a class="aside-burger__logo" href="#"><img src="/img/icons/menu/Group.png" class="aside-burger__image" alt="Лого"></a>
+            <button class="aside-burger__search"><img src="./img/icons/menu/search.svg" alt="Поиск" class="aside-burger__image"></button>
+            </nav>
+        </div>
+        <div class="aside-burger__main">
+            <nav class="aside-burger__nav">
+              <ul class="aside-burger__list">
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Ремонт техники</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Услуги и сервисы</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Корпоративным клиентам</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Продавцам техники</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Партнерам</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Производителям</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Наши сервисные центры</a></li>
+                  <li class="aside-burger__item"><a href="#" class="aside-burger__link">Контакты</a></li>
+              </ul>
+            </nav>
+        </div>
+        <div class="aside-burger__footer">
+          <ul class="aside-burger__actions">
+              <li class="aside-burger__action-box aside-burger__action-box"><button class="aside-burger__action aside-burger__action--call" data-modal="#call"><img src="./img/icons/menu/call.svg" alt="Позвонить"></button></li>
+              <li class="aside-burger__action-box"><button class="aside-burger__action aside-burger__action--feedback" data-modal="#feedback"><img src="./img/icons/menu/chat.svg" alt="Чат"></button>
+              </li>
+              <li class="aside-burger__action-box"><button class="aside-burger__action"><img src="./img/icons/menu/profile.svg" alt="Профиль"></button></li>
+            </ul>
+            <div class="aside-burger__contacts">
+              <a href="mailto:mail@cps.com" class="aside-burger__email">mail@cps.com</a>
+              <a href="tel:8 800 890 8900" class="aside-burger__number">8 800 890 8900</a>
+            </div>
+            <div class="aside-burger__langs">
+              <label class="aside-burger__label"><input type="radio" class="aside-burger__radio" name="lang" value="ru">RU</label>
+              <label class="aside-burger__label"><input type="radio" class="aside-burger__radio" name="lang" value="en">EN</label>
+              <label class="aside-burger__label"><input type="radio" class="aside-burger__radio" name="lang" value="ch">CH</label>
+            </div>
+        </div>
+      </div>
+  </aside>
+    <div class="inner-container">
+      <main class="main">
       <section class="main__info">
         <div class="main__row">
           <h1 class="main__title title">Услуги и сервисы</h1>
@@ -68,10 +112,10 @@
             </div>
           </div>
           <picture class="main__pic">
-            <source srcset="/img/img.jpg" type="image/jpeg" media="(min-width:1120px)">
-            <source srcset="/img/img-768.jpg" type="image/jpeg" media="(min-width:768px)">
-            <source srcset="/img/img-320.jpg" type="image/jpeg" media="(max-width:768px)">
-            <img class="main__image" src="/img/img.jpg" alt="Наша компания">
+            <source srcset="./img/img.jpg" type="image/jpeg" media="(min-width:1120px)">
+            <source srcset="./img/img-768.jpg" type="image/jpeg" media="(min-width:768px)">
+            <source srcset="./img/img-320.jpg" type="image/jpeg" media="(max-width:768px)">
+            <img class="main__image" src="./img/img.jpg" alt="Наша компания">
           </picture>
         </div>
       </section>
@@ -314,6 +358,37 @@
           офертой</div>
       </div>
     </footer>
+    </div>
+    </div>
+  <div class="modal-wrap modal-feedback-wrap" id="feedback">
+      <div class="modal modal-feedback">
+        <button class="modal__btn-close modal-feedback__btn-close"><img src="./img/icons/menu/burger-close.svg" alt=""></button>
+        <h2 class="title modal__title modal-feedback__title">Обратная связь</h2>
+        <form action="#" class="modal__form modal-feedback__form">
+          <input type="text" placeholder="Имя" name="name" class="modal__input modal-feedback__input">
+          <input type="tel" placeholder="Телефон" name="phone" class="modal__input modal-feedback__input">
+          <input type="email" placeholder="Электронная почта" name="email" class="modal__input modal-feedback__input">
+          <textarea placeholder="Сообщение" name="message" class="modal__input modal-feedback__input modal-feedback__textarea"></textarea>
+          <p class="modal__agreement">Нажимая “отправить”, вы даете согласие на <a class="modal__link" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__link" href="#">политикой конфиденциальности</a></p>
+          <div class="modal__btn-box">
+            <button class="price-slider__btn-order modal__btn-send modal-feedback__btn-send">Отправить</button>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="modal-wrap modal-call-wrap" id="call">
+      <div class="modal modal-call">
+        <button class="modal__btn-close modal-call__btn-close"><img src="./img/icons/menu/burger-close.svg" alt=""></button>
+        <h2 class="title modal__title modal-call__title">Заказать звонок</h2>
+        <form action="#" class="modal__form modal-call__form">
+          <input type="tel" placeholder="Телефон" name="phone" class="modal__input modal-call__input">
+          <p class="modal__agreement">Нажимая “отправить”, вы даете согласие на <a class="modal__link" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__link" href="#">политикой конфиденциальности</a></p>
+          <div class="modal__btn-box">
+            <button class="price-slider__btn-order modal__btn-send modal-call__btn-send">Отправить</button>
+          </div>
+        </form>
+      </div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
