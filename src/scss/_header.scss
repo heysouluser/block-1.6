@@ -1,0 +1,79 @@
+.header {
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  &__row {
+    padding: 18px 16px;
+    background-color: $bgcHeader;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &::after {
+      content: url('../img/icons/menu/divider.svg');
+      position: absolute;
+      top: 11px;
+      left: 172px;
+      @media (min-width: $screen-md) {
+        left: 60px;
+      }
+    }
+    > .header__button {
+      margin-right: 16px;
+      @media (min-width: $screen-md) {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__button {
+    background-color: $bgcHeader;
+  }
+
+  &__actions {
+    display: flex;
+    position: relative;
+    li:nth-child(4) {
+      margin-right: 16px;
+    }
+    li:first-child,
+    li:nth-child(2),
+    li:nth-child(3) {
+      display: none;
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+    @media (min-width: $screen-md) {
+      li:not(:last-child) {
+        margin-right: 16px;
+      }
+      li:nth-child(3) {
+        margin-right: 42px;
+      }
+      li:nth-child(3)::after {
+        content: url('../img/icons/menu/divider.svg');
+        position: absolute;
+        top: 4px;
+        left: 171px;
+      }
+    }
+  }
+}

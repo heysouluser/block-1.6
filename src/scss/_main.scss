@@ -1,0 +1,271 @@
+.main {
+  &__info {
+    background-color: $bgcMain;
+    padding: 24px 16px 35px;
+    position: relative;
+    border-top: 1px solid $blueBorderTop;
+    @media (min-width: $screen-md) {
+      padding: 24px 24px 40px;
+    }
+    @media (min-width: $screen-lg) {
+      padding: 0 32px 40px;
+      border-top: none;
+    }
+  }
+
+  &__row {
+    @media (min-width: $screen-lg) {
+      padding: 42px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
+    @media (min-width: $screen-lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__actions {
+    display: none;
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
+
+  &__action {
+    @media (min-width: $screen-lg) {
+      font-size: 16px;
+      letter-spacing: -0.2px;
+      color: $color;
+      margin-right: 8px;
+      position: relative;
+      padding-right: 40px;
+      background-color: $bgcMain;
+      transition: all 0.3s ease;
+      &:hover {
+        color: $cHover;
+      }
+      &:active {
+        color: $cActive;
+      }
+      &:first-child {
+        margin-right: 32px;
+        &::after {
+          content: url('../img/icons/menu/repair.svg');
+          padding-left: 8px;
+          position: absolute;
+          top: -9px;
+          left: 124px;
+        }
+      }
+      &:nth-child(2)::after {
+        content: url('../img/icons/menu/checkstatus.svg');
+        padding-left: 8px;
+        position: absolute;
+        top: -9px;
+        left: 119px;
+      }
+    }
+  }
+
+  &__navigation {
+    overflow-x: auto;
+    margin-bottom: 24px;
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
+    @media (min-width: $screen-lg) {
+      overflow-x: hidden;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    @media (min-width: $screen-lg) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__link {
+    display: block;
+    white-space: nowrap;
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: $cHover;
+    cursor: pointer;
+    background-color: $bgcMain;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    &:hover {
+      background: $bgcHeader;
+      border: 2px solid #b8ffec;
+      border-radius: 6px;
+    }
+    &:active {
+      background: #d2e5ec;
+      border: 2px solid #b8ffec;
+      border-radius: 6px;
+    }
+  }
+
+  &__company {
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+
+  &__about {
+    @media (min-width: $screen-md) {
+      flex: 1 1 50%;
+      margin-right: 48px;
+    }
+  }
+
+  &__text-block {
+    height: 100px;
+    transition: height 0.5s ease;
+    @media (min-width: $screen-md) {
+      height: 180px;
+    }
+    @media (min-width: $screen-lg) {
+      height: 210px;
+    }
+    &.full-text {
+      height: auto;
+    }
+  }
+
+  &__text {
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    color: $color;
+    margin-bottom: 16px;
+    &:not(:first-child) {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s ease 0s;
+      .full-text & {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    @media (min-width: $screen-md) {
+      &:nth-of-type(2) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    @media (min-width: $screen-lg) {
+      &:nth-of-type(3) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__more-text {
+    position: relative;
+    background-color: $bgcMain;
+    padding: 16px 0;
+    z-index: 2;
+  }
+
+  &__show-more-button {
+    position: relative;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    color: $color;
+    background-color: $bgcMain;
+    padding-left: 30px;
+    transition: color 0.3s ease 0s;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 37%;
+      right: 90%;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: #84f4e1;
+      padding: 2px;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 14%;
+      right: 90%;
+      border-width: 0 2px 2px 0;
+      border-style: solid;
+      border-color: #84f4e1;
+      padding: 2px;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease 0s;
+      transform-origin: center center;
+    }
+    &._show::before,
+    &._show::after {
+      transform: rotate(225deg);
+    }
+    &:hover {
+      color: $cHover;
+    }
+    &:active {
+      color: $cActive;
+    }
+  }
+
+  &__pic {
+    display: block;
+    margin: 0 -16px;
+    @media (min-width: $screen-md) {
+      margin: 0;
+      flex: 1 1 50%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    @media (min-width: $screen-md) {
+      border-radius: 7px;
+    }
+    @media (min-width: $screen-lg) {
+      margin-top: -9px;
+    }
+  }
+  &__slider {
+    border-top: 1px solid $blueBorderTop;
+  }
+}
+.title {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: bold;
+  letter-spacing: -0.6px;
+  color: $color;
+  &::before {
+    content: url('../img/icons/highlight.svg');
+    position: absolute;
+    top: 21px;
+    left: 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    @media (min-width: $screen-lg) {
+      top: 42px;
+    }
+  }
+}
+.fs-text {
+  display: none;
+  @media (min-width: $screen-lg) {
+    display: inline;
+  }
+}

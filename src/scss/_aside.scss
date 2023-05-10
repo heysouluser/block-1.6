@@ -1,0 +1,161 @@
+.aside-burger {
+  height: 100%;
+  width: 320px;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  left: -100%;
+  transition: left 0.3s ease 0s;
+  @media (min-width: $screen-md) {
+    box-shadow: 5px 0 50px #94a0b2;
+  }
+  @media (min-width: $screen-lg) {
+    position: sticky;
+    top: 0;
+    min-width: 320px;
+    box-shadow: none;
+  }
+  &.open {
+    left: 0;
+    width: 100%;
+    @media (min-width: $screen-md) {
+      width: 320px;
+    }
+  }
+  &__header {
+    margin-bottom: 38px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__burger-btn {
+    margin-right: 16px;
+    background-color: $bgcHeader;
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
+  }
+
+  &__search {
+    margin-left: auto;
+    background-color: $bgcHeader;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-bottom: 28px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $color;
+    letter-spacing: -0.2px;
+    position: relative;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $cHover;
+    }
+    &:active {
+      color: $cActive;
+    }
+    &::before {
+      content: url('../img/icons/highlight-mobile.svg');
+      position: absolute;
+      opacity: 0;
+      top: -4px;
+      left: 0px;
+      transform: scale(0.7);
+      transition: all 0.6s ease;
+    }
+    &:hover::before {
+      content: url('../img/icons/highlight-mobile.svg');
+      opacity: 1;
+      left: -24px;
+      transform: scale(1);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  &__action-box {
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__action {
+    background-color: $bgcHeader;
+  }
+
+  &__email {
+    display: block;
+    letter-spacing: -0.2px;
+    color: $color;
+    margin-bottom: 12px;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $cHover;
+    }
+    &:active {
+      color: $cActive;
+    }
+  }
+
+  &__number {
+    display: block;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    color: $color;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    &:hover {
+      color: $cHover;
+    }
+    &:active {
+      color: $cActive;
+    }
+  }
+
+  &__label {
+    margin-right: 7px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $cHover;
+    }
+    &:active {
+      color: $cActive;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+}
+.aside {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 18px 24px 32px;
+    background-color: $bgcHeader;
+  }
+}

@@ -1,17 +1,58 @@
-$bgColor: #24292e;
-$text: #fff;
+@import './_normalize';
+@import './_fonts';
+@import './vars';
+@import './header';
+@import './main';
+@import './aside';
+@import './footer';
+@import './sliders/sliderBrands';
+@import './sliders/sliderTechnique';
+@import './sliders/sliderPrices';
+@import './modal';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+html,
+body {
+  height: 100%;
+  font-size: $fontz;
+  font-family: 'TT Lakes';
+  line-height: 1.5;
+  position: relative;
 }
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+.container {
+  @media (min-width: $screen-lg) {
+    display: flex;
+    position: relative;
+  }
+}
+
+._lock {
+  overflow: hidden;
+}
+
+._hide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: $bgcHeader;
+  opacity: 0.96;
+}
+
+._hide-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background-color: $bgcHeader;
+  opacity: 0.96;
+}
+
+._show {
+  visibility: visible;
+  opacity: 1;
 }
