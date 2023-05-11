@@ -12,6 +12,7 @@
   box-shadow: 5px 0 50px #94a0b2;
   &--open {
     transform: translateX(0);
+    overflow-y: scroll;
   }
   @media (min-width: $screen-lg) {
     padding: 40px 32px;

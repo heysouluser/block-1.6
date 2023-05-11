@@ -19,6 +19,7 @@
   &.open {
     left: 0;
     width: 100%;
+    overflow-y: scroll;
     @media (min-width: $screen-md) {
       width: 320px;
     }

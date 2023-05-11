@@ -1,10 +1,12 @@
 @import './_normalize';
 @import './_fonts';
 @import './vars';
+@import './mixins';
 @import './header';
 @import './main';
 @import './aside';
 @import './footer';
+@import './sliders/sliders';
 @import './sliders/sliderBrands';
 @import './sliders/sliderTechnique';
 @import './sliders/sliderPrices';
@@ -30,29 +32,16 @@ body {
   overflow: hidden;
 }
 
-._hide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  background-color: $bgcHeader;
-  opacity: 0.96;
-}
-
-._hide-modal {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 4;
-  background-color: $bgcHeader;
-  opacity: 0.96;
-}
-
 ._show {
   visibility: visible;
   opacity: 1;
+}
+
+._hide {
+  @include hide;
+}
+
+._hide-modal {
+  @include hide;
+  z-index: 4;
 }

@@ -1,0 +1,19 @@
+.slider {
+  &__title {
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
+    color: $cHover;
+    padding: 16px;
+    @media (min-width: $screen-md) {
+      padding: 24px;
+    }
+  }
+  &__transparent-block {
+    @include transparent-block;
+  }
+  &__box {
+    position: relative;
+    padding: 16px 0 52px 16px;
+    background: $bgcMain;
+  }
+}
