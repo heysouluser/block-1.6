@@ -1,3 +1,5 @@
+import { toggleSmth } from "..";
+
 let swiperTech = null;
 const mediaQuery768px = window.matchMedia("(max-width: 768px)");
 const paginationTechBox = document.querySelector(".technique-slider__box .swiper-pagination");
@@ -37,15 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function sliderTechActions() {
-    sliderTech.classList.toggle('brand-slider-full');
-    showMoreTech.classList.toggle('_show');
-    if (showMoreTech.textContent === 'Скрыть') {
-      showMoreTech.textContent = 'Показать все';
-    } else showMoreTech.textContent = 'Скрыть';
-  }
-
-  showMoreTech.addEventListener('click', sliderTechActions);
+  showMoreTech.addEventListener('click', () => toggleSmth(sliderTech, 'brand-slider-full', showMoreTech, 'Показать все'));
 
   mediaQuery768px.addEventListener('change', function resizeWidth(event) {
     sliderTechToggle(event.matches);

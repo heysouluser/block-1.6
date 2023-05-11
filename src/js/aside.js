@@ -17,7 +17,9 @@ function openBurger() {
   body.appendChild(hidePage);
   document.addEventListener('keydown', escBurger);
   function escBurger(e) {
-    if (e.keyCode == 27) closeBurger();
+    if (e.key === 'Escape') {
+      closeBurger();
+    }
   }
 }
 

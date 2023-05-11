@@ -1,3 +1,5 @@
+import { toggleSmth } from "..";
+
 let swiper = null;
 const mediaQuery768px = window.matchMedia("(max-width: 768px)");
 const mediaQuery1120px = window.matchMedia("(min-width: 1120px)");
@@ -47,16 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function sliderActions() {
-    slider.classList.toggle('brand-slider-full');
-    showMore.classList.toggle('_show');
-    if (showMore.textContent === 'Скрыть') {
-      showMore.textContent = 'Показать все';
-    } else showMore.textContent = 'Скрыть';
-  }
-
-
-
   function newSlide(isFullSize) {
     if (isFullSize) {
       let newSlide = sliderWrapper.appendChild(cloneSlide);
@@ -70,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  showMore.addEventListener('click', sliderActions);
+  showMore.addEventListener('click', () => toggleSmth(slider, 'brand-slider-full', showMore, 'Показать все'));
 
   mediaQuery768px.addEventListener('change', function resizeWidth(event) {
     sliderToggle(event.matches);

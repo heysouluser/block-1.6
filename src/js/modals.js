@@ -15,20 +15,25 @@ const btnSendCall = modalCall.querySelector('.modal-call__btn-send');
 const modalFormFB = modalFeedback.querySelector('.modal-feedback__form');
 const modalFormCall = modalFeedback.querySelector('.modal-call__form');
 const modalInputsFB = modalFeedback.querySelectorAll('.modal-feedback__input');
+const modalInputFB = modalFeedback.querySelector('.modal-feedback__input');
 const modalInputsCall = modalCall.querySelectorAll('.modal-call__input');
+const modalInputCall = modalCall.querySelector('.modal-call__input');
 const body = document.querySelector('body');
 const addInfo = document.createElement('div');
 const blurBlock = document.createElement('div');
 
-function showModal(wrap) {
+function showModal(wrap, input) {
   document.querySelector('.aside-burger').classList.remove('open');
   wrap.classList.add('modal-wrap--open');
   body.classList.add('_lock');
   blurBlock.classList.add('_hide-modal');
   body.appendChild(blurBlock);
+  input.focus();
   addInfo.textContent = '';
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal(wrap);
+    if (e.key === 'Escape') {
+      closeModal(wrap);
+    }
   })
 }
 
@@ -36,17 +41,17 @@ function closeModal(wrap) {
   wrap.classList.remove('modal-wrap--open');
   blurBlock.remove();
   body.classList.remove('_lock');
-  if (document.querySelector('._hide')) document.querySelector('._hide').remove();
+  if (document.querySelector('._hide')) {
+    document.querySelector('._hide').remove();
+  }
 }
 
 function sendForm(e, wrap, inputs, form) {
   e.preventDefault();
   let emptyValue = 0;
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === '') {
-      emptyValue++;
-    }
-  };
+  for (el of inputs) {
+    if (!el.value) emptyValue++;
+  }
   if (emptyValue > 0) {
     addInfo.classList.add('modal__empty-fields');
     addInfo.textContent = 'Поля не заполнены!';
@@ -54,20 +59,19 @@ function sendForm(e, wrap, inputs, form) {
   }
   else {
     closeModal(wrap);
-    for (let i = 0; i < inputs.length; i++) {
-      inputs.value = '';
-    };
+    for (el of inputs) el.value = '';
     addInfo.remove();
   };
 }
 
-actionFeedback.addEventListener('click', () => showModal(modalFeedbackWrap));
-actionCall.addEventListener('click', () => showModal(modalCallWrap));
-headerActionFeedback.addEventListener('click', () => showModal(modalFeedbackWrap));
-headerActionCall.addEventListener('click', () => showModal(modalCallWrap));
+actionFeedback.addEventListener('click', () => showModal(modalFeedbackWrap, modalInputFB));
+actionCall.addEventListener('click', () => showModal(modalCallWrap, modalInputCall));
+headerActionFeedback.addEventListener('click', () => showModal(modalFeedbackWrap, modalInputFB));
+headerActionCall.addEventListener('click', () => showModal(modalCallWrap, modalInputCall));
 btnCloseFB.addEventListener('click', () => closeModal(modalFeedbackWrap));
 btnCloseCall.addEventListener('click', () => closeModal(modalCallWrap));
 btnSendFB.addEventListener('click', (e) => sendForm(e, modalFeedbackWrap, modalInputsFB, modalFormFB));
 btnSendCall.addEventListener('click', (e) => sendForm(e, modalCallWrap, modalInputsCall, modalFormCall));
 blurBlock.addEventListener('click', () => closeModal(modalFeedbackWrap));
 blurBlock.addEventListener('click', () => closeModal(modalCallWrap));
+
